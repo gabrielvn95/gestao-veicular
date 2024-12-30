@@ -1,0 +1,56 @@
+﻿@using GestaoVeiculo.Dto
+@model UsuarioLoginDto
+
+@{
+    Layout = "_LayoutDesloagada";
+}
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-light" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-light" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<div>
+    <form asp-action="Login" asp-controller="Login" method="post" class="p-4 border rounded shadow-lg"
+          style="max-width: 400px; margin: 0 auto; background-color: #f8f9fa;">
+        <h3 class="text-center mb-4">Login</h3>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail:</label>
+            <input type="text" class="form-control" id="email" aria-describedby="emailHelp"
+                   placeholder="Digite seu Email" asp-for="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="senha" class="form-label">Senha:</label>
+            <input type="password" class="form-control" id="senha"
+                   placeholder="Digite sua senha" asp-for="Senha" />
+            <span asp-validation-for="Senha" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button type="submit" class="btn btn-primary w-100" style="border-radius: 25px;" aria-label="Entrar">Entrar</button>
+        </div>
+
+        <hr class="my-4" />
+
+        <div class="text-center">
+            <a asp-action="Registrar" asp-controller="Login" class="btn btn-outline-secondary w-100" style="border-radius: 25px;">
+                Cadastrar-se
+            </a>
+        </div>
+    </form>
+</div>

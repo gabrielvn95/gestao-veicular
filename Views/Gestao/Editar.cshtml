@@ -1,0 +1,122 @@
+﻿@model GestaoModel
+
+@{
+    ViewData["Title"] = "Editar Dados";
+}
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success text-light" role="alert">
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger text-light" role="alert">
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<div class="container bg-dark p-4 rounded-5" style="max-width: 600px;">
+    <div class="mb-4 text-center">
+        <h1 class="text-light">Cadastro Veicular</h1>
+    </div>
+
+    <form method="post" asp-controller="Gestao" asp-action="Editar">
+        <div class="mb-3">
+            <label for="Nome" class="form-label text-light">Nome:</label>
+            <input type="text" class="form-control text-dark" asp-for="Nome" id="Nome" placeholder="Digite o nome completo!" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Cpf" class="form-label text-light">CPF:</label>
+            <input type="text" class="form-control text-dark" asp-for="Cpf" id="Cpf" placeholder="Digite o CPF!" />
+            <span class="text-danger" asp-validation-for="Cpf"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Rg" class="form-label text-light">RG:</label>
+            <input type="text" class="form-control text-dark" asp-for="Rg" id="Rg" placeholder="Digite o RG!" />
+            <span class="text-danger" asp-validation-for="Rg"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Email" class="form-label text-light">Email:</label>
+            <input type="text" class="form-control text-dark" asp-for="Email" id="Email" placeholder="Digite o seu E-mail!" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Telefone" class="form-label text-light">Telefone:</label>
+            <input type="text" class="form-control text-dark" asp-for="Telefone" id="Telefone" placeholder="Digite o seu Telefone!" />
+            <span class="text-danger" asp-validation-for="Telefone"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="NomeVendedor" class="form-label text-light">Vendedor:</label>
+            <input type="text" class="form-control text-dark" asp-for="NomeVendedor" id="NomeVendedor" placeholder="Digite o nome do vendedor!" />
+            <span class="text-danger" asp-validation-for="NomeVendedor"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="NomeAvaliador" class="form-label text-light">Avaliador:</label>
+            <input type="text" class="form-control text-dark" asp-for="NomeAvaliador" id="NomeAvaliador" placeholder="Digite o nome do avaliador!" />
+            <span class="text-danger" asp-validation-for="NomeAvaliador"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="MarcaCarro" class="form-label text-light">Marca:</label>
+            <input type="text" class="form-control text-dark" asp-for="MarcaCarro" id="MarcaCarro" placeholder="Digite a marca do carro!" />
+            <span class="text-danger" asp-validation-for="MarcaCarro"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ModeloCarro" class="form-label text-light">Modelo:</label>
+            <input type="text" class="form-control text-dark" asp-for="ModeloCarro" id="ModeloCarro" placeholder="Digite o modelo do carro!" />
+            <span class="text-danger" asp-validation-for="ModeloCarro"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Ano" class="form-label text-light">Ano:</label>
+            <input type="text" class="form-control text-dark" asp-for="Ano" id="Ano" placeholder="Digite o ano do carro!" />
+            <span class="text-danger" asp-validation-for="Ano"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Documentacao" class="form-label text-light">Documentação:</label>
+            <input type="text" class="form-control text-dark" asp-for="Documentacao" id="Documentacao" placeholder="Informe o status da documentação!" />
+            <span class="text-danger" asp-validation-for="Documentacao"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ValorVenda" class="form-label text-light">Valor de Venda:</label>
+            <input type="text" class="form-control text-dark" asp-for="ValorVenda" id="ValorVenda" placeholder="Informe o valor da venda!" />
+            <span class="text-danger" asp-validation-for="ValorVenda"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="ValorFinanciamento" class="form-label text-light">Valor de Financiamento:</label>
+            <input type="text" class="form-control text-dark" asp-for="ValorFinanciamento" id="ValorFinanciamento" placeholder="Informe o valor do financiamento!" />
+            <span class="text-danger" asp-validation-for="ValorFinanciamento"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Opcionais" class="form-label text-light">Opcionais:</label>
+            <input type="text" class="form-control text-dark" asp-for="Opcionais" id="Opcionais" placeholder="Informe os opcionais!" />
+            <span class="text-danger" asp-validation-for="Opcionais"></span>
+        </div>
+
+        <div class="mb-3">
+            <label for="Multas" class="form-label text-light">Multas:</label>
+            <input type="text" class="form-control text-dark" asp-for="Multas" id="Multas" placeholder="Informe se há multas!" />
+            <span class="text-danger" asp-validation-for="Multas"></span>
+        </div>
+
+        <div class="d-flex gap-3 mt-4">
+            <button type="submit" class="btn btn-success w-50">Editar</button>
+            <a class="btn btn-primary w-50" asp-controller="Gestao" asp-action="Index">Voltar</a>
+        </div>
+    </form>
+</div>
