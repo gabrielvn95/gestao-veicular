@@ -179,3 +179,4 @@ C:\Users\gabri\source\repos\GestaoVeiculo\obj\Debug\net8.0\refint\GestaoVeiculo.
 C:\Users\gabri\source\repos\GestaoVeiculo\obj\Debug\net8.0\GestaoVeiculo.pdb
 C:\Users\gabri\source\repos\GestaoVeiculo\obj\Debug\net8.0\GestaoVeiculo.genruntimeconfig.cache
 C:\Users\gabri\source\repos\GestaoVeiculo\obj\Debug\net8.0\ref\GestaoVeiculo.dll
+C:\Users\gabri\source\repos\GestaoVeiculo\obj\Debug\net8.0\GestaoVeiculo.sourcelink.json
